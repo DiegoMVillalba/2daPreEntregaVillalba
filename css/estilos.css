@@ -1,0 +1,362 @@
+*{
+    box-sizing:border-box;
+}
+
+body {
+    margin: 0;
+    background:var(--fondo);
+    font-family:sans-serif;
+}
+.container {
+    max-width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+:root{
+    --fondo: rgb(207, 211, 212);
+    --cfondoForm1: rgba(1,80, 80, 0.39);
+    --cfondoForm2: rgb(129, 193, 202);
+    --cnegro1:black;
+    --ctexto:rgb(14, 81, 88);
+    --ctextoDark:rgb(1,35,39);
+    --cblanco:white;
+    --error: rgb(184,31,31);
+}
+
+#registra2 {
+    display: none;
+}
+#kuma {
+    display: none;
+}
+
+
+.form{
+    border-top: solid 2px black ;
+    max-width: 400px;
+    padding: 30px 50px;
+    margin: auto;
+    margin-top: 10px;
+    background: linear-gradient(
+        0deg,
+     var(--cfondoForm1) 0%, 
+     var(--cfondoForm2) 50%);
+
+}
+
+.form-titulo{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+    letter-spacing:3px ;
+
+
+}
+
+.form-input{
+    margin-bottom:30px;
+}
+
+.form-input label {
+    display: block;
+    margin-top: 10px;
+    font-size:15px;
+    color:var(--ctexto) ;
+
+}
+.form-input input {
+    width: 100%;
+    border:none;
+    outline: none;
+    background: none;
+    border-bottom:1px solid var(--ctexto) ;
+
+}
+.form-input input:focus + label{
+    font-weight: bold;
+    color: var(--cnegro1);
+}
+
+.form-boton input{
+    background:var(--cnegro1);
+    color: var(--cblanco);
+    padding:10px 50px;
+    font-size: 25px;
+    display: block;
+    margin: auto;
+    margin-top:40px;
+    border: none;
+
+}
+
+.form-boton input:hover{
+    background:var(--ctextoDark);
+    transition:0.5s;
+
+}
+
+.mensajeError {
+    color: var(--error);
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing:1px;
+}
+
+.mensajeCorrecto{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+/* kuma */
+
+
+
+@font-face {
+    font-family: "fuenteBravada";
+    src: url(../Fuentes/bravada-arma.ttf); }
+  
+  body {
+    font-family: 'fuenteBravada', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    background: #ede7f6; }
+  
+  .header-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%); }
+    .header-flex h1 {
+      color: white;
+      font-size: 70px; }
+  
+  .navbar {
+    font-size: 30px;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%); }
+    .navbar .navbar-brand {
+      font-size: 30px; }
+    .navbar .navbar a {
+      color: #ffffff; }
+    .navbar .navbar ul li {
+      color: #ffffff; }
+  
+  .envios {
+    width: 100%; }
+  
+  .envios .container p {
+    text-align: center; }
+  
+  main {
+    background-color: white;
+    color: #000000;
+    font-family: 'fuenteBravada',  sans-serif;
+    height: 100vh;
+    padding: 10px; }
+    main #main-flex {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 25px; }
+      main #main-flex h2 {
+        background-color: white;
+        font-size: 35px;
+        text-align: center;
+        color: #000000;
+        border: #800004 double 4px;
+        padding: 10px;
+        margin: 20px; }
+      main #main-flex div img {
+        border-radius: 8px;
+        filter: drop-shadow(0 0 0.5rem #222);
+        filter: scale(1);
+        height: 200px;
+        width: 200px;
+        border: solid #800004 1px; }
+      main #main-flex img:hover {
+        filter: scale(0);
+        border: solid #fff 1px; }
+  
+  main {
+    background-color: white;
+    color: #000000;
+    font-family: 'fuenteBravada',  sans-serif;
+    height: 100%;
+    padding: 10px;
+    margin: 10px; }
+    main h2 {
+      background-color: white;
+      font-size: 35px;
+      text-align: center;
+      color: #000000;
+      border: #800004 double 4px;
+      padding: 10px;
+      margin: 20px; }
+    main h3 {
+      text-align: center; }
+    main div img {
+      height: 200px;
+      width: 200px;
+      border: solid #800004 1px; }
+  
+  main section #main-flex div {
+    justify-content: center;
+    align-items: center;
+    align-content: center; }
+  
+  .quienesSomos-flex {
+    font-size: 30px; }
+  
+  footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: row; }
+    footer .sec {
+      margin-right: 30px; }
+    footer .nosotros {
+      width: 40%; }
+    footer h2 {
+      position: relative;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 15px; }
+    footer h2:before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #f00; }
+    footer p {
+      color: #999; }
+  
+  .sci {
+    margin-top: 20px;
+    display: flex; }
+    .sci li {
+      list-style: none; }
+    .sci a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      text-decoration: none;
+      border-radius: 4px; }
+    .sci a:hover {
+      background: #f00; }
+    .sci .fa-instagram {
+      color: #fff;
+      font-size: 20px; }
+    .sci .fa-facebook-f {
+      color: #fff;
+      font-size: 20px; }
+  
+  .quickLinks {
+    position: relative;
+    width: 25%; }
+    .quickLinks ul li {
+      list-style: none; }
+    .quickLinks a {
+      color: #999;
+      text-decoration: none;
+      margin-left: -30px;
+      margin-bottom: 10px;
+      display: inline-block; }
+    .quickLinks a:hover {
+      color: #fff; }
+  
+  .contacto {
+    width: calc(35%-60px);
+    margin-right: 0 !important; }
+    .contacto .info {
+      position: relative; }
+    .contacto li {
+      display: flex;
+      margin-left: -30px;
+      margin-bottom: 16px; }
+    .contacto span:nth-child(1) {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 10px; }
+    .contacto span {
+      color: #999; }
+    .contacto a {
+      color: #999;
+      text-decoration: none; }
+    .contacto a:hover {
+      color: #fff; }
+  
+  .copyrightText {
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999; }
+  
+  /* mobile first */
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .header-flex {
+      width: 100%; }
+    .navbar {
+      width: 100vw; }
+    body {
+      width: 100%; }
+    #main-flex {
+      width: 100%;
+      height: 100%; }
+    main section div {
+      margin-left: 20%; }
+    .pie {
+      max-height: 30%;
+      width: 100%; } }
+  
+  /* tablet */
+  @media (min-width: 481px) and (max-width: 1023px) {
+    main {
+      height: 100%; }
+    .quienesSomos-flex {
+      height: 100vh; }
+    .contacto-flex {
+      height: 100vh; } }
+  
+  @media (max-width: 991px) {
+    footer {
+      padding: 40px; }
+    footer .container {
+      flex-direction: column; }
+    footer .container .sec {
+      margin-right: 0;
+      margin-bottom: 40px; }
+    footer .container .sec .nosotros .quickLinks .contacto {
+      width: 100%; }
+    .copyrightText {
+      padding: 8px 40px; } }
+  
