@@ -41,6 +41,7 @@ function ingresar(e){
     }else{
         personaDatos = `No existe este usuario`;
     }
+    
     document.querySelector("#usuarioEncontrado").innerHTML= personaDatos;
 }
 
@@ -88,42 +89,27 @@ function validacionForm() {
         element.lastElementChild.innerHMTL = "";
     
     });
-
-    if(nombre.value.length < 1 || nombre.value.trim()== "" ) {
-        mostrarMensajeError("nombre", "Nombre no válido");
-        condicion = false;
+    (nombre.value.length < 1 || nombre.value.trim()== "" ) ? mostrarMensajeError("nombre", "Nombre no válido") : condicion = false;
+    
+    (apellido.value.length < 1 || apellido.value.trim()== "" ) ? mostrarMensajeError("apellido", "Apellido no válido") : condicion = false;
+    
+    (email.value.length < 1 || email.value.trim()== "" ) ? mostrarMensajeError("email", "Email no válido") : condicion = false;
+    
+    (celular.value.lenght == 10 || celular.value.trim()== "" || isNaN(celular.value)) ? mostrarMensajeError("celular", "Celular no válido") : condicion = false;
         
-    }
-    if(apellido.value.length < 1 || apellido.value.trim()== "" ) {
-        mostrarMensajeError("apellido", "Apellido no válido");
-        condicion = false;
+    (password.value.lenght < 1 || password.value.trim()== "") ? mostrarMensajeError("password", "Password incorrecto") : condicion = false;
         
-    }
-    if(email.value.length < 1 || email.value.trim()== "" ) {
-        mostrarMensajeError("email", "Email no válido");
-        condicion = false;
+    (repeatPassword.value != password.value) ? mostrarMensajeError("repeatPassword", "Password incorrecto") : condicion = false;
         
-    }
-    if(celular.value.lenght == 10 || celular.value.trim()== "" || isNaN(celular.value)) {
-        mostrarMensajeError("celular", "Celular no válido");
-        condicion = false;
-    }
-    if(password.value.lenght < 1 || password.value.trim()== ""){
-        mostrarMensajeError("password", "Password incorrecto");
-        condicion = false;
-    }
-    if(repeatPassword.value != password.value){
-        mostrarMensajeError("repeatPassword", "Password incorrecto");
-        condicion = false;
-    }
-    if(termsAndConditions.checked){
-        mostrarMensajeError("termsAndConditions", "Acepto");
-        condicion = false;
-    }else{
-        mostrarMensajeError("termsAndConditions", "");
-    }
+    (termsAndConditions.checked) ? mostrarMensajeError("termsAndConditions", "Aceptó") :  condicion = false;
+   
+    //(termsAndConditions.checked) ? mostrarMensajeError("termsAndConditions", ""): condicion = true;
+    
     return condicion;
-}
+    }
+    
+    
+
 
     function mostrarMensajeError (claseInput, mensaje){
         let elemento = document.querySelector(`.${claseInput}`);
