@@ -77,8 +77,15 @@ form.addEventListener("submit", (e)=>{
     localStorage.setItem("arrayUsuarios", JSON.stringify(nuevoUsuarioArr))
     let condicion = validacionForm();
     if(condicion){
+       
         enviarFormulario();
     }
+    swal({
+        title: "Bienvenido!",
+        text: "Te haz registrado exitosamente!",
+        icon: "success",
+        button: "OK",
+      });
 });
 
 
@@ -107,6 +114,9 @@ function validacionForm() {
     
     return condicion;
     }
+
+
+  
     
     
 
