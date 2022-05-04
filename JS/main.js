@@ -74,18 +74,29 @@ form.addEventListener("submit", (e)=>{
     nuevoUsuarioArr.push(persona1);
     console.log(nuevoUsuarioArr);
     //LOCAL STORAGE Y JSON
-    localStorage.setItem("arrayUsuarios", JSON.stringify(nuevoUsuarioArr))
     let condicion = validacionForm();
-    if(condicion){
-       
+    console.log(condicion);
+    if(condicion == false) {
+        
+        localStorage.setItem("arrayUsuarios", JSON.stringify(nuevoUsuarioArr));
         enviarFormulario();
-    }
+    
     swal({
         title: "Bienvenido!",
         text: "Te haz registrado exitosamente!",
         icon: "success",
         button: "OK",
       });
+    }else{
+        swal({
+            title: "Error!",
+            text: "No te haz registrado, por favor introduce todos los datos !",
+            icon: "error",
+            button: "OK",
+          });
+
+    }
+    
 });
 
 
@@ -96,6 +107,7 @@ function validacionForm() {
         element.lastElementChild.innerHMTL = "";
     
     });
+    console.log(nombre.value.length, nombre.value.trim());
     (nombre.value.length < 1 || nombre.value.trim()== "" ) ? mostrarMensajeError("nombre", "Nombre no válido") : condicion = false;
     
     (apellido.value.length < 1 || apellido.value.trim()== "" ) ? mostrarMensajeError("apellido", "Apellido no válido") : condicion = false;
@@ -110,7 +122,7 @@ function validacionForm() {
         
     (termsAndConditions.checked) ? mostrarMensajeError("termsAndConditions", "Aceptó") :  condicion = false;
    
-    //(termsAndConditions.checked) ? mostrarMensajeError("termsAndConditions", ""): condicion = true;
+    (termsAndConditions.checked) ? mostrarMensajeError("termsAndConditions", ""): condicion = true;
     
     return condicion;
     }
