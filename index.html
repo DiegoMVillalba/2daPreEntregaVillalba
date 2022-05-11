@@ -93,7 +93,7 @@
     <div id="kuma">
         <header class="header-flex">
             <h1>Kuma</h1>
-            
+            <div class="clima"></div>
         </header>
         <!-- fin header -->
         
@@ -131,8 +131,8 @@
                 </ul>
                
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <input class="form-control me-2 buscandoAndo" id="buscandoAndo" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" id="busqueda" type="submit">Buscar</button>
                 </form>
               </div>
             </div>
@@ -145,6 +145,7 @@
             <!-- fin carousel -->
     
      <!-- comienzo de main  -->
+     
         <main >   
           <div class="envios" >
             <div class="container">                            
@@ -168,24 +169,46 @@
             <h2 >Temporada 2022</h2>
             <section id="main-flex">
                 <div>
-                    <img src="./imagenes/mujer/1167C batik - copia.jpg" class="img-fluid" alt="...">
-                    <h3>Batik</h3>
+                    <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/e30f4d56f8c04dcdb2cbad1400472a37_9366/top-deportivo-de-entrenamiento-all-me-sujecion-suave.jpg" id="1" class="img-fluid" alt="...">
+                    <div class="divImg"></div>
+                    <h3>Top 0</h3>
+                    
                 </div>
                 <div>
-                    <img src="./imagenes/mujer/232 beige - copia.jpg" class="img-fluid" alt="..." >
-                    <h3>Top beige</h3>
+                    <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/e30f4d56f8c04dcdb2cbad1400472a37_9366/top-deportivo-de-entrenamiento-all-me-sujecion-suave.jpg" id="2" class="img-fluid" alt="..." >
+                    <h3>Top 1</h3>
                 </div>
                 <div>
-                    <img src="./imagenes/mujer/232 beige atras.jpg" class="img-fluid" alt="..." >
-                    <h3>Top beige</h3>
+                    <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/e30f4d56f8c04dcdb2cbad1400472a37_9366/top-deportivo-de-entrenamiento-all-me-sujecion-suave.jpg" id="3" class="img-fluid" alt="..." >
+                    <h3>Top 2 </h3>
                 </div>
                 <div>
-                    <img src="./imagenes/hombre/remera fanstasma 1.jpg" class="img-fluid" alt="...">
-                    <h3>Remera hombre</h3>
+                    <img src="./imagenes/hombre/remera fanstasma 1.jpg" id="4" class="img-fluid" alt="...">
+                    <h3>Remera hombre 1 </h3>
                 </div>
                 <div>
-                    <img src="./imagenes/hombre/remera fanstasma 2.jpg" class="img-fluid" alt="...">
-                    <h3>Remera hombre</h3>
+                    <img src="./imagenes/hombre/remera fanstasma 2.jpg" id="5" class="img-fluid" alt="...">
+                    <h3>Remera hombre 2</h3>
+                </div>
+                <div> 
+                    <img src="./imagenes/Buzo 2 Trasher.jpg" id="6" class="img-fluid" alt="...">
+                    <h3>Buzo Trasher</h3>
+                </div>
+                <div>
+                    <img src="./imagenes/mujer/232 beige - copia.jpg" id="7" class="img-fluid" alt="..." >
+                    <h3>Top 3</h3>
+                </div>
+                <div>
+                    <img src="./imagenes/mujer/232 beige atras.jpg" id="8" class="img-fluid" alt="..." >
+                    <h3>Top 4</h3>
+                </div>
+                <div>
+                    <img src="./imagenes/hombre/remera fanstasma 1.jpg" id="9" class="img-fluid" alt="...">
+                    <h3>Remera hombre 3</h3>
+                </div>
+                <div>
+                    <img src="./imagenes/hombre/remera fanstasma 2.jpg" id="10" class="img-fluid" alt="...">
+                    <h3>Remera hombre 4</h3>
                 </div>
             </section>
           
@@ -256,13 +279,14 @@
       </div>
     </div> 
     <!---booststrap--->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <!---fin bootstrap--->
     <!---SweetAlert--->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!---Fin SweetAlert--->
-    <script src="./JS/bootstrap.js"></script>
     <script src="./JS/main.js"></script>
     <script src="./JS/personas.js"></script>
 </body>

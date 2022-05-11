@@ -24,7 +24,6 @@ function registrarse(registro){
 //FUNCION DE INGRESAR
 function ingresar(e){
     e.preventDefault();
-   
     //DATOS A DEL USUARIO PARA INGRESAR
     const email = document.getElementById("mail").value;
     const password = document.getElementById("contrasenia").value;
@@ -68,15 +67,16 @@ form.addEventListener("submit", (e)=>{
     const celular = document.getElementById("celular").value;
     const password = document.getElementById("password").value;
     const password2 = document.getElementById("repeatPassword").value;
-    //CREAR OBJETO USUARIO
-    const persona1 = new Persona(nombre, apellido, correo, celular, password, password2);
-    //PUSHEO LOS DATOS AL ARRAY
-    nuevoUsuarioArr.push(persona1);
-    console.log(nuevoUsuarioArr);
+    
     //LOCAL STORAGE Y JSON
     let condicion = validacionForm();
     console.log(condicion);
-    if(condicion == false) {
+    if(nombre !== "" && apellido !== "" && correo !== "" && password !== "" && password2 !== "") {
+        //CREAR OBJETO USUARIO
+        const persona1 = new Persona(nombre, apellido, correo, celular, password, password2);
+        //PUSHEO LOS DATOS AL ARRAY
+        nuevoUsuarioArr.push(persona1);
+        console.log(nuevoUsuarioArr);
         
         localStorage.setItem("arrayUsuarios", JSON.stringify(nuevoUsuarioArr));
         enviarFormulario();
@@ -127,12 +127,6 @@ function validacionForm() {
     return condicion;
     }
 
-
-  
-    
-    
-
-
     function mostrarMensajeError (claseInput, mensaje){
         let elemento = document.querySelector(`.${claseInput}`);
         elemento.lastElementChild.innerHTML = mensaje;
@@ -142,3 +136,28 @@ function validacionForm() {
         form.reset();
         form.lastElementChild.innerHTML ="listo!!";
     };
+
+///fetch------------------------------
+
+    const formularioDeBusqueda = document.querySelector("#formDeBusqueda");
+    const inputPorNombre = document.querySelector("#inputNombre");
+    const inputId = document.querySelector("#inputId");
+    const img = document.querySelector(".divImg");
+    
+    
+
+
+
+
+
+    fetch("./datos.json")
+    .then((response) => response.json())
+    .then((data) =>{ 
+      data.forEach((element)  => {
+          console.log(data[0]);
+          img.innerHTML=`El id del producto es: ${element.id},
+          En stock: ${element.stock}
+          `
+            
+        });
+    });
